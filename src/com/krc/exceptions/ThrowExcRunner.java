@@ -9,9 +9,13 @@ class Amount {
 		this.amount = amount;
 	}
 
-	public void addAmount(Amount newCurrency) throws Exception {
+	public void addAmount(Amount newCurrency) {
 		if (newCurrency.currency != currency) {
-			throw new Exception("Currency mismatch");
+			// throw new Exception("Currency mismatch");
+			String msg = "Currency symbol " + currency
+					+ " does not match new currency symbol"
+					+ newCurrency.currency;
+			throw new CurrencyMisMatchException(msg);
 		}
 		this.amount += newCurrency.amount;
 	}
@@ -21,6 +25,13 @@ class Amount {
 	}
 
 }
+
+class CurrencyMisMatchException extends RuntimeException {
+	CurrencyMisMatchException(String msg) {
+		super(msg);
+	}
+}
+
 
 public class ThrowExcRunner {
 	public static void main(String[] args) {
