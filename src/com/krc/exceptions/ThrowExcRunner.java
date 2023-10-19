@@ -28,8 +28,6 @@ class Amount {
 
 class CurrencyMisMatchException extends RuntimeException {
 	/* */
-	private static final long serialVersionUID = 1L;
-
 	CurrencyMisMatchException(String msg) {
 		super(msg);
 	}
@@ -58,6 +56,16 @@ public class ThrowExcRunner {
 			e.printStackTrace();
 		}
 		System.out.println(am1);
+
+
+		try {
+			am1.addAmount(am4);
+			String s = null;
+			s.length();
+		} catch (CurrencyMisMatchException e) {
+			// log the exception
+			e.printStackTrace();
+		}
 	}
 
 }
