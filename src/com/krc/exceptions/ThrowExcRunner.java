@@ -27,6 +27,9 @@ class Amount {
 }
 
 class CurrencyMisMatchException extends RuntimeException {
+	/* */
+	private static final long serialVersionUID = 1L;
+
 	CurrencyMisMatchException(String msg) {
 		super(msg);
 	}
