@@ -20,7 +20,7 @@ public class TryWithResources {
 
 		try (Scanner scanner = new Scanner(System.in);
 				FileReader fr = new FileReader(
-						"C:\\Users\\krtco\\eclipse-workspace\\java-exceptions\\src\\errors.log");
+						"src/errors.log");
 				BufferedReader bf = new BufferedReader(fr)) {
 			int[] numbers = { 1, 2, 34, 5 };
 
